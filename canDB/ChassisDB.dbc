@@ -1,0 +1,65 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ClusterECU EngineECU TransmissionECU AccelECU BrakeECU HandleECU DriverStateWarningECU CO2SensorECU HazardLightECU windowECU
+
+
+BO_ 512 frmDriverStateWarnMsg: 1 DriverStateWarningECU
+ SG_ SleepinessLevel : 0|2@1+ (1,0) [0|3] ""  windowECU,HandleECU,EngineECU,ClusterECU
+
+BO_ 513 frmCO2SensorMsg: 2 CO2SensorECU
+ SG_ CO2Level : 0|12@1+ (2,0) [0|8190] ""  windowECU,ClusterECU
+
+BO_ 514 frmHazardLightMsg: 1 HazardLightECU
+ SG_ LightOnStatus : 0|1@1+ (1,0) [0|1] ""  ClusterECU
+
+BO_ 257 frmAccelMsg: 1 AccelECU
+ SG_ AccelAngle : 0|6@1+ (1,0) [0|63] "Deg"  EngineECU
+
+BO_ 256 frmBrakeMsg: 1 BrakeECU
+ SG_ BrakeAngle : 0|6@1+ (1,0) [0|63] "Deg"  EngineECU
+
+BO_ 336 frmEngineMsg: 3 EngineECU
+ SG_ EngineTemp : 8|10@1+ (1,-20) [-20|1003] "¡ÆC"  ClusterECU
+ SG_ VehicleSpeed : 0|8@1+ (1,0) [0|255] "km/s"  ClusterECU
+
+BO_ 337 frmTransMsg: 1 TransmissionECU
+ SG_ curGearStatus : 0|2@1+ (1,0) [0|3] ""  EngineECU,ClusterECU
+
+
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "BusType" "CAN";
+
