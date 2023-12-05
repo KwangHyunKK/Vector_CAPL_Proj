@@ -6,6 +6,19 @@ includes
 
 variables
 {
-  
+  int cur_speed;
 }
 
+on message frmBrakeMsg
+{
+ cur_speed = @sysvar::Car::Car_speed - @sysvar::Car::Car_Brake;
+  if(cur_speed < 0)cur_speed = 0;
+  @sysvar::Car::Car_speed = cur_speed;
+}
+
+on message frmAccelMsg
+{
+  cur_speed = @sysvar::Car::Car_speed + @sysvar::Car::Car_ACC;
+  if(cur_speed > 240)cur_speed = 240;
+  @sysvar::Car::Car_speed = cur_speed;
+}
