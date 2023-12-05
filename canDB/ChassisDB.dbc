@@ -33,14 +33,15 @@ NS_ :
 
 BS_:
 
-BU_: ClusterECU EngineECU TransmissionECU AccelECU BrakeECU HandleECU DriverStateWarningECU CO2SensorECU HazardLightECU windowECU
+BU_: GateWay ClusterECU EngineECU TransmissionECU AccelECU BrakeECU HandleECU DriverStateWarningECU CO2SensorECU HazardLightECU windowECU
 
 
 BO_ 512 frmDriverStateWarnMsg: 1 DriverStateWarningECU
+ SG_ WindowOpenSig : 2|1@1+ (1,0) [0|1] ""  windowECU
  SG_ SleepinessLevel : 0|2@1+ (1,0) [0|3] ""  windowECU,HandleECU,EngineECU,ClusterECU
 
 BO_ 513 frmCO2SensorMsg: 2 CO2SensorECU
- SG_ CO2Level : 0|12@1+ (2,0) [0|8190] ""  windowECU,ClusterECU
+ SG_ CO2Level : 0|12@1+ (2,0) [0|8190] ""  DriverStateWarningECU,windowECU,ClusterECU
 
 BO_ 514 frmHazardLightMsg: 1 HazardLightECU
  SG_ LightOnStatus : 0|1@1+ (1,0) [0|1] ""  ClusterECU
