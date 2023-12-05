@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="ExDash">
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl4" ControlName="LCD Control 4">
+      <Property Name="Name">LCDControl4</Property>
+      <Property Name="Size">130, 50</Property>
+      <Property Name="Location">717, 426</Property>
+      <Property Name="NumberIntDigits">3</Property>
+      <Property Name="DecimalPlaces">0</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_Brake;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl3" ControlName="LCD Control 3">
+      <Property Name="Name">LCDControl3</Property>
+      <Property Name="Size">130, 50</Property>
+      <Property Name="Location">717, 361</Property>
+      <Property Name="NumberIntDigits">3</Property>
+      <Property Name="DecimalPlaces">0</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_ACC;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl2" ControlName="LCD Control 2">
+      <Property Name="Name">LCDControl2</Property>
+      <Property Name="Size">125, 50</Property>
+      <Property Name="Location">782, 248</Property>
+      <Property Name="NumberIntDigits">3</Property>
+      <Property Name="DecimalPlaces">0</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_RPM;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl1" ControlName="LCD Control 1">
+      <Property Name="Name">LCDControl1</Property>
+      <Property Name="Size">130, 50</Property>
+      <Property Name="Location">442, 304</Property>
+      <Property Name="NumberIntDigits">3</Property>
+      <Property Name="DecimalPlaces">0</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_speed;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl5" ControlName="Right_Arrow_con">
+      <Property Name="Name">SwitchControl5</Property>
+      <Property Name="Size">59, 77</Property>
+      <Property Name="Location">578, 288</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="SwitchValuesRx">1;2;0;1</Property>
+      <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+      <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+      <Property Name="ImageFile">..\..\canoe\p\Dashboard\Right_turn_signal.bmp</Property>
+      <Property Name="SymbolConfiguration">8;2;InfotainmentDB;HazardLightECU;frmHazardLightMsg;LightOnStatus;1;Infotainment;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">34</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl3" ControlName="Left_Arrow_con">
+      <Property Name="Name">SwitchControl3</Property>
+      <Property Name="Size">59, 77</Property>
+      <Property Name="Location">360, 288</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="SwitchValuesRx">1;2;0;1</Property>
+      <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+      <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+      <Property Name="ImageFile">..\..\canoe\p\Dashboard\left_turn_signal.bmp</Property>
+      <Property Name="SymbolConfiguration">8;2;InfotainmentDB;HazardLightECU;frmHazardLightMsg;LightOnStatus;1;Infotainment;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">32</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl3" Children="Controls" ControlName="DButton">
+      <Property Name="Name">ButtonControl3</Property>
+      <Property Name="Size">80, 85</Property>
+      <Property Name="Location">448, 400</Property>
+      <Property Name="PressValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;4&lt;/RxValue&gt;</Property>
+      <Property Name="PressValueVT">1;Lower;4</Property>
+      <Property Name="PressValue">4</Property>
+      <Property Name="Font">굴림, 27.75pt, style=Bold</Property>
+      <Property Name="Text">D</Property>
+      <Property Name="ForeColor">Blue</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_Mode;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">25</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls" ControlName="NButton">
+      <Property Name="Name">ButtonControl2</Property>
+      <Property Name="Size">80, 85</Property>
+      <Property Name="Location">318, 400</Property>
+      <Property Name="PressValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;3&lt;/RxValue&gt;</Property>
+      <Property Name="PressValueVT">1;Lower;3</Property>
+      <Property Name="PressValue">3</Property>
+      <Property Name="Font">굴림, 27.75pt, style=Bold</Property>
+      <Property Name="Text">N</Property>
+      <Property Name="ForeColor">Blue</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_Mode;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">24</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl5" Children="Controls" ControlName="RButton">
+      <Property Name="Name">ButtonControl5</Property>
+      <Property Name="Size">80, 85</Property>
+      <Property Name="Location">183, 400</Property>
+      <Property Name="PressValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;2&lt;/RxValue&gt;</Property>
+      <Property Name="PressValueVT">1;Lower;2</Property>
+      <Property Name="PressValue">2</Property>
+      <Property Name="Font">굴림, 27.75pt, style=Bold</Property>
+      <Property Name="Text">R</Property>
+      <Property Name="ForeColor">Blue</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_Mode;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">23</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.AnalogGaugeControl, Vector.CANalyzer.Panels.AnalogGauge, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="AnalogGaugeControl3" ControlName="Analog Gauge 3">
+      <Property Name="Name">AnalogGaugeControl3</Property>
+      <Property Name="Size">269, 278</Property>
+      <Property Name="Location">703, 3</Property>
+      <Property Name="MinColor">White</Property>
+      <Property Name="BackgroundColor">White</Property>
+      <Property Name="IsLegendValue">False</Property>
+      <Property Name="ArrowColor">Red</Property>
+      <Property Name="IsTicksAdjustment">False</Property>
+      <Property Name="IsMargin">False</Property>
+      <Property Name="CriticalProps" Member="AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAAUuY3RvcgYDAAAAXFZlY3Rvci5DQU5hbHl6ZXIuUGFuZWxzLkFuYWxvZ0dhdWdlLCBWZXJzaW9uPTE1LjQuMzUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAA2VmVjdG9yLkNBTmFseXplci5QYW5lbHMuRGVzaWduLkdhdWdlQ3JpdGljYWxQcm9wZXJ0aWVzBgUAAAAyVm9pZCAuY3RvcihEb3VibGUsIERvdWJsZSwgRG91YmxlLCBEb3VibGUsIERvdWJsZSkGBgAAAFAuY3RvcihTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlKQEAAAAKCw==">
+        <Argument>750</Argument>
+        <Argument>8000</Argument>
+        <Argument>750</Argument>
+        <Argument>3000</Argument>
+        <Argument>5000</Argument>
+      </Property>
+      <Property Name="MidColor">0, 192, 0</Property>
+      <Property Name="GaugeFont">굴림, 11.25pt, style=Bold</Property>
+      <Property Name="ArrowWidth">3</Property>
+      <Property Name="LegendText">x1000 RPM</Property>
+      <Property Name="IsFrame">False</Property>
+      <Property Name="ScaleAngle">270</Property>
+      <Property Name="CurrentPosition">750</Property>
+      <Property Name="LowerRangeLimit">3000</Property>
+      <Property Name="UpperRangeLimit">5000</Property>
+      <Property Name="ScaleMin">750</Property>
+      <Property Name="ScaleMax">8000</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_RPM;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.AnalogGaugeControl, Vector.CANalyzer.Panels.AnalogGauge, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="AnalogGaugeControl1" ControlName="Analog Gauge 1">
+      <Property Name="Name">AnalogGaugeControl1</Property>
+      <Property Name="Size">269, 278</Property>
+      <Property Name="Location">414, 0</Property>
+      <Property Name="MinColor">White</Property>
+      <Property Name="BackgroundColor">White</Property>
+      <Property Name="ScaleMargin">5</Property>
+      <Property Name="ArrowColor">Red</Property>
+      <Property Name="IsTicksAdjustment">False</Property>
+      <Property Name="IsMargin">False</Property>
+      <Property Name="CriticalProps" Member="AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAAUuY3RvcgYDAAAAXFZlY3Rvci5DQU5hbHl6ZXIuUGFuZWxzLkFuYWxvZ0dhdWdlLCBWZXJzaW9uPTE1LjQuMzUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAA2VmVjdG9yLkNBTmFseXplci5QYW5lbHMuRGVzaWduLkdhdWdlQ3JpdGljYWxQcm9wZXJ0aWVzBgUAAAAyVm9pZCAuY3RvcihEb3VibGUsIERvdWJsZSwgRG91YmxlLCBEb3VibGUsIERvdWJsZSkGBgAAAFAuY3RvcihTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlKQEAAAAKCw==">
+        <Argument>0</Argument>
+        <Argument>240</Argument>
+        <Argument>0</Argument>
+        <Argument>0</Argument>
+        <Argument>180</Argument>
+      </Property>
+      <Property Name="LengthMainTicks">10</Property>
+      <Property Name="MidColor">White</Property>
+      <Property Name="GaugeFont">굴림, 11.25pt, style=Bold</Property>
+      <Property Name="ArrowWidth">3</Property>
+      <Property Name="MainTicksNumber">12</Property>
+      <Property Name="LegendText">km/h</Property>
+      <Property Name="IsFrame">False</Property>
+      <Property Name="ScaleAngle">270</Property>
+      <Property Name="CurrentPosition">0</Property>
+      <Property Name="LowerRangeLimit">0</Property>
+      <Property Name="UpperRangeLimit">180</Property>
+      <Property Name="ScaleMin">0</Property>
+      <Property Name="ScaleMax">240</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_speed;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls" ControlName="Pbutton">
+      <Property Name="Name">ButtonControl1</Property>
+      <Property Name="Size">80, 85</Property>
+      <Property Name="Location">50, 400</Property>
+      <Property Name="Font">굴림, 27.75pt, style=Bold</Property>
+      <Property Name="Text">P</Property>
+      <Property Name="ForeColor">Blue</Property>
+      <Property Name="SymbolConfiguration">8;16;Car;;;Car_Mode;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">15</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.AnalogGaugeControl, Vector.CANalyzer.Panels.AnalogGauge, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="AnalogGaugeControl2" ControlName="Analog Gauge 2">
+      <Property Name="Name">AnalogGaugeControl2</Property>
+      <Property Name="Size">158, 279</Property>
+      <Property Name="Location">227, 3</Property>
+      <Property Name="MinColor">White</Property>
+      <Property Name="BackgroundColor">White</Property>
+      <Property Name="IsSubTicks">False</Property>
+      <Property Name="IsLegendValue">False</Property>
+      <Property Name="ArrowColor">Red</Property>
+      <Property Name="IsMargin">False</Property>
+      <Property Name="CriticalProps" Member="AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAAUuY3RvcgYDAAAAXFZlY3Rvci5DQU5hbHl6ZXIuUGFuZWxzLkFuYWxvZ0dhdWdlLCBWZXJzaW9uPTE1LjQuMzUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAA2VmVjdG9yLkNBTmFseXplci5QYW5lbHMuRGVzaWduLkdhdWdlQ3JpdGljYWxQcm9wZXJ0aWVzBgUAAAAyVm9pZCAuY3RvcihEb3VibGUsIERvdWJsZSwgRG91YmxlLCBEb3VibGUsIERvdWJsZSkGBgAAAFAuY3RvcihTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlKQEAAAAKCw==">
+        <Argument>-20</Argument>
+        <Argument>1003</Argument>
+        <Argument>120</Argument>
+        <Argument>-20</Argument>
+        <Argument>500</Argument>
+      </Property>
+      <Property Name="MidColor">White</Property>
+      <Property Name="LayoutStyle">LeftStyle</Property>
+      <Property Name="GaugeFont">굴림, 11.25pt, style=Bold</Property>
+      <Property Name="ArrowWidth">3</Property>
+      <Property Name="LegendText">ºC</Property>
+      <Property Name="IsFrame">False</Property>
+      <Property Name="ScaleAngle">140</Property>
+      <Property Name="CurrentPosition">120</Property>
+      <Property Name="LowerRangeLimit">-20</Property>
+      <Property Name="UpperRangeLimit">500</Property>
+      <Property Name="ScaleMin">-20</Property>
+      <Property Name="ScaleMax">1003</Property>
+      <Property Name="SymbolConfiguration">8;2;InfotainmentDB;EngineECU;frmEngineMsg;EngineTemp;1;Infotainment;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl2" ControlName="Switch/Indicator 2">
+      <Property Name="Name">SwitchControl2</Property>
+      <Property Name="Size">23, 30</Property>
+      <Property Name="Location">160, 288</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="SwitchValuesRx">1;2;0;1</Property>
+      <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+      <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">4</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator 1">
+      <Property Name="Name">SwitchControl1</Property>
+      <Property Name="Size">51, 66</Property>
+      <Property Name="Location">40, 288</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="SwitchValuesRx">1;2;0;1</Property>
+      <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+      <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+      <Property Name="SymbolConfiguration">
+      </Property>
+      <Property Name="TabIndex">2</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl2" Children="Controls" ControlName="ACC_val">
+      <Property Name="Name">TrackBarControl2</Property>
+      <Property Name="Size">106, 47</Property>
+      <Property Name="Location">24, 112</Property>
+      <Property Name="MaximumSize">100000, 47</Property>
+      <Property Name="Maximum">63</Property>
+      <Property Name="MaximumDouble">63</Property>
+      <Property Name="SymbolConfiguration">8;2;ChassisDB;AccelECU;frmAccelMsg;AccelAngle;1;Chassis;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">1</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls" ControlName="Brake_val">
+      <Property Name="Name">TrackBarControl1</Property>
+      <Property Name="Size">106, 47</Property>
+      <Property Name="Location">24, 180</Property>
+      <Property Name="MaximumSize">100000, 47</Property>
+      <Property Name="Maximum">63</Property>
+      <Property Name="MaximumDouble">63</Property>
+      <Property Name="SymbolConfiguration">8;2;ChassisDB;BrakeECU;frmBrakeMsg;BrakeAngle;1;Chassis;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">1022, 530</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
