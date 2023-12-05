@@ -6,6 +6,12 @@ includes
 
 variables
 {
-  
+  float brakePedalPosition;
 }
 
+on message frmBrakeMsg
+{
+  brakePedalPosition = this.BrakeAngle;
+  
+  @sysvar::Car::Car_Brake = 0.53 * brakePedalPosition;
+}
