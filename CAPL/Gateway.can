@@ -1,0 +1,54 @@
+/*@!Encoding:949*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on message Powertrain::frmTransMsg
+{
+  message * getMsg1;
+  message * getMsg2;
+  getMsg1 = this;
+  getMsg2 = this;
+  getMsg1.can = 4;
+  getMsg2.can = 2;
+  output(getMsg1);
+  output(getMsg2);
+}
+
+on message Powertrain::frmEngineMsg
+{
+  message * getMsg;
+  getMsg = this;
+  getMsg.can = 4;
+  output(getMsg);
+}
+
+on message Chassis::frmAccelMsg
+{
+  message * getMsg1;
+  message * getMsg2;
+  getMsg1 = this;
+  getMsg2 = this;
+  getMsg1.can = 1;
+  getMsg2.can = 4;
+  output(getMsg1);
+  output(getMsg2);
+}
+
+on message Chassis::frmBrakeMsg
+{
+  message * getMsg1;
+  message * getMsg2;
+  getMsg1 = this;
+  getMsg2 = this;
+  getMsg1.can = 1;
+  getMsg2.can = 4;
+  output(getMsg1);
+  output(getMsg2);
+}
