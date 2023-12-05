@@ -6,6 +6,14 @@ includes
 
 variables
 {
+  float pedalPosition;
+  float maxSpeed = 240;
+}
+
+on message frmAccelMsg
+{
+  pedalPosition = this.AccelAngle;
   
+  @sysvar::Car::Car_ACC = pedalPosition / 4;
 }
 
