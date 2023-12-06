@@ -9,6 +9,7 @@ variables
   
 }
 
+
 on message Powertrain::frmTransMsg
 {
   message * getMsg1;
@@ -52,3 +53,32 @@ on message Chassis::frmBrakeMsg
   output(getMsg1);
   output(getMsg2);
 }
+
+on message Body::frmDriverStateWarnMsg
+{
+  message * getMsg1;
+  message * getMsg2;
+  getMsg1 = this;
+  getMsg2 = this;
+  getMsg1.can = 2;
+  getMsg2.can = 4;
+  output(getMsg1);
+  output(getMsg2);
+}
+
+on message Body::frmCO2SensorMsg
+{
+  message * getMsg1;
+  getMsg1 = this;
+  getMsg1.can = 4;
+  output(getMsg1);
+}
+
+on message Body::frmHazardLightMsg
+{
+  message * getMsg1;
+  getMsg1 = this;
+  getMsg1.can = 4;
+  output(getMsg1);
+}
+
