@@ -6,6 +6,72 @@ includes
 
 variables
 {
-  
+  msTimer T1;
+  int DriverState;
+  int windowstatus;
+  int cnt = 0;
 }
 
+on Timer T1
+{
+  cnt = 0;
+  if(windowstatus == 0) // close
+  {
+    if(@sysvar::Car::leftWindowState > 0)
+    {
+      @sysvar::Car::leftWindowState -= 1;
+      ++cnt;
+    }
+    if(@sysvar::Car::rightWindowState > 0)
+    {
+      @sysvar::Car::rightWindowState -= 1;
+      ++cnt;
+    }
+  }
+  else
+  {
+    if(@sysvar::Car::leftWindowState <10)
+    {
+      @sysvar::Car::leftWindowState += 1;
+      ++cnt;
+    }
+    if(@sysvar::Car::rightWindowState < 10)
+    {
+      @sysvar::Car::rightWindowState += 1;
+      ++cnt;
+    }
+  }
+  if(cnt > 0)
+  {
+    setTimer(T1, 80);
+    cnt = 0;
+  }
+}
+
+on message frmDriverStateWarnMsg
+{
+  DriverState = this.SleepinessLevel;
+}
+
+on message frmCO2SensorMsg
+{
+  if(DriverState >= 2)
+  {
+    if(this.CO2Level < 2000)
+    {
+      $WindowOpenSig = 0;
+      windowstatus = 0;
+    }
+    else if(this.CO2Level >= 2000)
+    {
+      $WindowOpenSig = 1;
+      windowstatus = 1;
+    }
+    runwindow();
+  }
+}
+
+runWindow()
+{
+  setTimer(T1, 80);
+}

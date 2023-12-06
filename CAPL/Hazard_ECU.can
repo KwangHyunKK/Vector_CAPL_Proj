@@ -6,6 +6,36 @@ includes
 
 variables
 {
-  
+  msTimer T1;
+  int timerOn;
 }
 
+on timer T1
+{
+  if(timerOn == 1)
+  {
+    @sysvar::Car::leftArrow = @sysvar::Car::leftArrow ^ 1;
+    @sysvar::Car::rightArrow = @sysvar::Car::rightArrow ^ 1;
+    setTimer(T1, 60);
+  }
+}
+
+on message frmDriverStateWarnMsg
+{
+  if(this.SleepinessLevel == 3)
+  {
+    timerOn = 1;
+    $LightOnStatus = 1;
+    setTimer(T1, 60);
+  }
+  else
+  {
+    $LightOnStatus = 0;
+    timerOn = 0;
+  }
+}
+
+on preStart
+{
+  timerOn = 0;
+}

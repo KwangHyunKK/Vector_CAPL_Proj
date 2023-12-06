@@ -6,6 +6,52 @@ includes
 
 variables
 {
-  
+  msTimer T1;
+  int SleepLevel;
+  int CO2Status;
+  int EmergencyLights;
 }
 
+on timer T1
+{
+  // @sysvar에 따라서 값을 바꾼다
+  if(SleepLevel == 1)
+  {
+    if($SleepinessLevel < 3)$SleepinessLevel += 1;
+    setTimer(T1, 10000);
+  }
+}
+
+on start
+{
+
+}
+
+on sysvar_update Car::DriverStatus
+{
+  // Car Driver 자는 상태 
+  if(@Car::DriverStatus == 1) 
+  {
+    // Sleepiness하지 않았을 때
+    if($SleepinessLevel == 0)
+    {
+      SleepLevel = 1;
+      $SleepinessLevel = 1;
+      setTimer(T1, 10000);
+    }
+  }
+  else
+  {
+    // Driver 깼을 때
+    if($SleepinessLevel >= 1)
+    {
+      $SleepinessLevel = 0;
+      SleepLevel = 0;
+    }
+  }
+}
+
+on preStart
+{
+ // 변수 초기화 
+}
