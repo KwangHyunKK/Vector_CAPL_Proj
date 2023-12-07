@@ -1,0 +1,95 @@
+/*@!Encoding:949*/
+includes
+{
+  
+}
+
+variables
+{
+  int t = 0;
+}
+
+on preStart{
+  @sysvar::Button::pressed_P = 1;
+  
+}
+
+on sysvar Button::pressed_P
+{
+  // 1인 상태에서 한번 더 눌렀을 때, 그대로 유지되어야 함.
+  if(t == 0 && @sysvar::Button::pressed_P == 0){
+    @sysvar::Button::pressed_P = 1;
+  }
+  else{
+    if(t == 1) t--;
+    else{
+      @sysvar::Button::curState = 0;
+      t = 1;
+      @sysvar::Button::pressed_R = 0;
+      @sysvar::Button::pressed_N = 0;
+      @sysvar::Button::pressed_D = 0;
+    }
+    write("In P Signal value: %d", t);
+  }
+}
+
+on sysvar Button::pressed_R
+{
+  // 1인 상태에서 한번 더 눌렀을 때, 그대로 유지되어야 함.
+  if(t == 0 && @sysvar::Button::pressed_R == 0){
+    @sysvar::Button::pressed_R = 1;
+  }
+  else{
+    if(t == 1) t--;
+    else{
+      @sysvar::Button::curState = 1;
+      t = 1;
+      @sysvar::Button::pressed_P = 0;
+      @sysvar::Button::pressed_N = 0;
+      @sysvar::Button::pressed_D = 0;
+    }
+    write("In R Signal value: %d", t);
+  }
+}
+
+on sysvar Button::pressed_N
+{
+  // 1인 상태에서 한번 더 눌렀을 때, 그대로 유지되어야 함.
+  if(t == 0 && @sysvar::Button::pressed_N == 0){
+    @sysvar::Button::pressed_N = 1;
+  }
+  else{
+    if(t == 1) t--;
+    else{
+      @sysvar::Button::curState = 2;
+      @sysvar::Button::pressed_R = 0;
+      @sysvar::Button::pressed_P = 0;
+      @sysvar::Button::pressed_D = 0;
+    }
+    write("In N Signal value: %d", t);
+  }
+}
+
+on sysvar Button::pressed_D
+{
+  // 1인 상태에서 한번 더 눌렀을 때, 그대로 유지되어야 함.
+  if(t == 0 && @sysvar::Button::pressed_D == 0){
+    @sysvar::Button::pressed_D = 1;
+  }
+  else{
+    if(t == 1) t--;
+    else{
+      @sysvar::Button::curState = 3;
+      t = 1;
+      @sysvar::Button::pressed_R = 0;
+      @sysvar::Button::pressed_N = 0;
+      @sysvar::Button::pressed_P = 0;
+    }
+    write("In D Signal value: %d", t);
+  }
+}
+
+on sysvar Button::curState
+{
+  $TransmissionECU::curGearStatus = @sysvar::Button::curState;
+} 
