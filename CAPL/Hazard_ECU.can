@@ -14,8 +14,8 @@ on timer T1
 {
   if(timerOn == 1)
   {
-    @sysvar::Car::leftArrow = @sysvar::Car::leftArrow ^ 1;
-    @sysvar::Car::rightArrow = @sysvar::Car::rightArrow ^ 1;
+    @sysvar::Body::leftArrow = @sysvar::Body::leftArrow ^ 1;
+    @sysvar::Body::rightArrow = @sysvar::Body::rightArrow ^ 1;
     setTimer(T1, 60);
   }
 }
