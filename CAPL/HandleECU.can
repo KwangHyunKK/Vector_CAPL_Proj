@@ -23,7 +23,12 @@ on start
 
 on message Chassis::frmDriverStateWarnMsg
 {
-  CurrSleepLev = this.SleepinessLevel.phys;
+  @sysvar::Chassis::sleepLevel = this.SleepinessLevel.phys;
+}
+
+on sysvar sysvar::Chassis::sleepLevel
+{
+  CurrSleepLev = @sysvar::Chassis::sleepLevel;
   if (CurrSleepLev == PrevSleepLev + 1)
   {
     VibCount = 1;
@@ -39,13 +44,10 @@ on timer tmrCycle
     @sysvar::Chassis::handleVib++;
     @sysvar::Chassis::handleVib %= 2;
 
-    if (VibCount % 15 == 0) // 3�??�안 ?�직임
+    if (VibCount % 15 == 0) // 3�� ���� ������
     {
-        @sysvar::Chassis::handleVib++;
-        if(@sysvar::Chassis::handleVib % 8 == 0)
-        {
-            @sysvar::Chassis::handleVib = 0;
-        }
+      VibCount = 0;
+      @sysvar::Chassis::handleVib = 0;
     }
   }
 }
