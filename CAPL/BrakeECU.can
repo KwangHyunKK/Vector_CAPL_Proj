@@ -13,6 +13,6 @@ on message frmBrakeMsg
 {
   brakePedalPosition = this.BrakeAngle;
   
-  @sysvar::Chassis::BrakeAngle = brakePedalPosition;
-  $frmBrakeMsg::BrakeAngle = @sysvar::Chassis::BrakeAngle;
+  @sysvar::Chassis::brakeAngle = brakePedalPosition;
+  $frmBrakeMsg::BrakeAngle = @sysvar::Chassis::brakeAngle;
 }

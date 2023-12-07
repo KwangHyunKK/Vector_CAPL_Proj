@@ -11,8 +11,10 @@ variables
 
 on message frmAccelMsg
 {
-  accelPedalPosition = this.AccelAngle;
-  
-  @sysvar::Chassis::AccelAngle = accelPedalPosition;
-  $frmAccelMsg::AccelAngle = @sysvar::Chassis::AccelAngle;
+
+  pedalPosition = this.AccelAngle;
+
+  @sysvar::Chassis::accelAngle = pedalPosition;
+  $frmAccelMsg::AccelAngle = @sysvar::Chassis::accelAngle;
 }
+

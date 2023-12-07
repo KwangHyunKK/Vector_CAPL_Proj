@@ -27,10 +27,10 @@ on start
 
 }
 
-on sysvar_update Car::DriverStatus
+on sysvar_update Body::driverStatus
 {
   // Car Driver 자는 상태 
-  if(@Car::DriverStatus == 1) 
+  if(@Body::driverStatus == 1) 
   {
     // Sleepiness하지 않았을 때
     if($SleepinessLevel == 0)

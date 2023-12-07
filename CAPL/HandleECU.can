@@ -23,12 +23,7 @@ on start
 
 on message Chassis::frmDriverStateWarnMsg
 {
-  @sysvar::Chassis::SleepLevel = this.SleepinessLevel.phys;
-}
-
-on sysvar sysvar::Chassis::SleepLevel
-{
-  CurrSleepLev = @sysvar::Chassis::SleepLevel;
+  CurrSleepLev = this.SleepinessLevel.phys;
   if (CurrSleepLev == PrevSleepLev + 1)
   {
     VibCount = 1;
@@ -46,8 +41,12 @@ on timer tmrCycle
 
     if (VibCount % 15 == 0) // 3초 동안 움직임
     {
-      VibCount = 0;
-      @sysvar::Chassis::HandleVib = 0;
+        @sysvar::Chassis::handleVib++;
+        if(@sysvar::Chassis::handleVib % 8 == 0)
+        {
+            flag = 0;
+            @sysvar::Chassis::handleVib = 0;
+        }
     }
   }
 }

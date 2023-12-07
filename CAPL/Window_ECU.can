@@ -17,27 +17,27 @@ on Timer T1
   cnt = 0;
   if(windowstatus == 0) // close
   {
-    if(@sysvar::Car::leftWindowState > 0)
+    if(@sysvar::Body::leftWindowState > 0)
     {
-      @sysvar::Car::leftWindowState -= 1;
+      @sysvar::Body::leftWindowState -= 1;
       ++cnt;
     }
-    if(@sysvar::Car::rightWindowState > 0)
+    if(@sysvar::Body::rightWindowState > 0)
     {
-      @sysvar::Car::rightWindowState -= 1;
+      @sysvar::Body::rightWindowState -= 1;
       ++cnt;
     }
   }
   else
   {
-    if(@sysvar::Car::leftWindowState <10)
+    if(@sysvar::Body::leftWindowState <10)
     {
-      @sysvar::Car::leftWindowState += 1;
+      @sysvar::Body::leftWindowState += 1;
       ++cnt;
     }
-    if(@sysvar::Car::rightWindowState < 10)
+    if(@sysvar::Body::rightWindowState < 10)
     {
-      @sysvar::Car::rightWindowState += 1;
+      @sysvar::Body::rightWindowState += 1;
       ++cnt;
     }
   }
