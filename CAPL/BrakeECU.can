@@ -9,10 +9,8 @@ variables
   float brakePedalPosition;
 }
 
-on message frmBrakeMsg
+on sysvar sysvar::Chassis::BrakeAngle
 {
-  brakePedalPosition = this.BrakeAngle;
-  
-  @sysvar::Chassis::brakeAngle = brakePedalPosition;
-  $frmBrakeMsg::BrakeAngle = @sysvar::Chassis::brakeAngle;
+  brakePedalPosition = @sysvar::Chassis::BrakeAngle;
+  $frmBrakeMsg::BrakeAngle = brakePedalPosition;
 }
