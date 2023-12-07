@@ -36,15 +36,14 @@ on timer tmrCycle
   if (VibCount > 0)
   {
     VibCount++;
-    @sysvar::Chassis::HandleVib++;
-    @sysvar::Chassis::HandleVib %= 2;
+    @sysvar::Chassis::handleVib++;
+    @sysvar::Chassis::handleVib %= 2;
 
-    if (VibCount % 15 == 0) // 3초 동안 움직임
+    if (VibCount % 15 == 0) // 3�??�안 ?�직임
     {
         @sysvar::Chassis::handleVib++;
         if(@sysvar::Chassis::handleVib % 8 == 0)
         {
-            flag = 0;
             @sysvar::Chassis::handleVib = 0;
         }
     }

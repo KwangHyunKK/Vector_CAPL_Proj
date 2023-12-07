@@ -9,9 +9,9 @@ variables
   float accelPedalPosition;
 }
 
-on sysvar sysvar::Chassis::AccelAngle
+on sysvar sysvar::Chassis::accelAngle
 {
-  accelPedalPosition = @sysvar::Chassis::AccelAngle;
+  accelPedalPosition = @sysvar::Chassis::accelAngle;
   $frmAccelMsg::AccelAngle = accelPedalPosition;
 }
 
