@@ -6,14 +6,13 @@ includes
 
 variables
 {
-  float pedalPosition;
+  float accelPedalPosition;
 }
 
 on message frmAccelMsg
 {
-  pedalPosition = this.AccelAngle;
-
-  @sysvar::Car::Car_ACC = accelPedalPosition;
-  $frmAccelMsg::AccelAngle = @sysvar::Car::Car_ACC;
+  accelPedalPosition = this.AccelAngle;
+  
+  @sysvar::Chassis::AccelAngle = accelPedalPosition;
+  $frmAccelMsg::AccelAngle = @sysvar::Chassis::AccelAngle;
 }
-
