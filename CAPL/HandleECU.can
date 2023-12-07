@@ -9,7 +9,16 @@ variables
   msTimer tmrCycle;
   int CurrSleepLev;
   int PrevSleepLev;
-  int flag;
+  int VibCount;
+}
+
+on start
+{
+  CurrSleepLev = 0;
+  PrevSleepLev = 0;
+  VibCount = 0;
+  
+  setTimerCyclic(tmrCycle, 200);
 }
 
 on message Chassis::frmDriverStateWarnMsg
@@ -17,23 +26,20 @@ on message Chassis::frmDriverStateWarnMsg
   CurrSleepLev = this.SleepinessLevel.phys;
   if (CurrSleepLev == PrevSleepLev + 1)
   {
-    flag = 1;
+    VibCount = 1;
   }
   PrevSleepLev = CurrSleepLev;
 }
 
-on start 
-{
-    CurrSleepLev = 0;
-    PrevSleepLev = 0;
-    flag = 0;
-
-    setTimerCyclic(tmrCycle, 500);
-}
-
 on timer tmrCycle
 {
-    if(flag == 1)
+  if (VibCount > 0)
+  {
+    VibCount++;
+    @sysvar::Chassis::HandleVib++;
+    @sysvar::Chassis::HandleVib %= 2;
+
+    if (VibCount % 15 == 0) // 3초 동안 움직임
     {
         @sysvar::Chassis::handleVib++;
         if(@sysvar::Chassis::handleVib % 8 == 0)
@@ -42,4 +48,5 @@ on timer tmrCycle
             @sysvar::Chassis::handleVib = 0;
         }
     }
+  }
 }
