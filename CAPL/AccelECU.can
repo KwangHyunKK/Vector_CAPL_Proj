@@ -13,7 +13,7 @@ on message frmAccelMsg
 {
   pedalPosition = this.AccelAngle;
 
-  @sysvar::Car::Car_ACC = accelPedalPosition;
-  $frmAccelMsg::AccelAngle = @sysvar::Car::Car_ACC;
+  @sysvar::Chassis::accelAngle = pedalPosition;
+  $frmAccelMsg::AccelAngle = @sysvar::Chassis::accelAngle;
 }
 

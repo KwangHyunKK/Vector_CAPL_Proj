@@ -14,7 +14,7 @@ variables
 
 on message Chassis::frmDriverStateWarnMsg
 {
-  CurrSleepLev = this.SleepinessLevel.phys; // 이 값이 뭐지?
+  CurrSleepLev = this.SleepinessLevel.phys;
   if (CurrSleepLev == PrevSleepLev + 1)
   {
     flag = 1;
@@ -35,11 +35,11 @@ on timer tmrCycle
 {
     if(flag == 1)
     {
-        @sysvar::Gui::Handle_Vib++;
-        if(@sysvar::Gui::Handle_Vib % 8 == 0)
+        @sysvar::Chassis::handleVib++;
+        if(@sysvar::Chassis::handleVib % 8 == 0)
         {
             flag = 0;
-            @sysvar::Gui::Handle_Vib = 0;
+            @sysvar::Chassis::handleVib = 0;
         }
     }
 }

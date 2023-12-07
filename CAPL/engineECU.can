@@ -18,7 +18,7 @@ on message CAN1::frmDriverStateWarnMsg{
   }
 }
 on message CAN1::frmAccelMsg{
-  if(@sysvar::IGN::Ign_Start == 0){
+  if(@sysvar::IGN::lgnStart == 0){
       accelAng = this.AccelAngle.phys;
       if(brakeAng == 0){
         if(accelAng > 0){
@@ -41,7 +41,7 @@ on message CAN1::frmAccelMsg{
 }
 on message CAN1::frmBrakeMsg{
   
-    if(@sysvar::IGN::Ign_Start == 1){
+    if(@sysvar::IGN::lgnStart == 1){
       brakeAng = this.BrakeAngle;
       
       vSpeed -= 0.03528 * (brakeAng * 0.033);
