@@ -6,46 +6,46 @@ includes
 
 variables
 {
-  // ì¬í˜¸ì¶œ ë°©ì§€ë¥¼ ìœ„í•œ ë³€ìˆ˜
+  // ÀçÈ£Ãâ ¹æÁö¸¦ À§ÇÑ º¯¼ö
   int block_flag = 0;
 }
 
-// P ë²„íŠ¼ì´ ëˆŒë¦¬ê±°ë‚˜ ë‹¤ë¥¸ ë²„íŠ¼ì´ ëˆŒë ¤ì„œ êº¼ì¡Œì„ ë•Œ ë™ì‘
-on sysvar Button::pressed_P
+// P ¹öÆ°ÀÌ ´­¸®°Å³ª ´Ù¸¥ ¹öÆ°ÀÌ ´­·Á¼­ ²¨Á³À» ¶§ µ¿ÀÛ
+on sysvar Button::button_P
 {
   write("in P");
-  // 1ì¸ ìƒíƒœì—ì„œ í•œë²ˆ ë” ëˆŒë €ì„ ë•Œ, ê·¸ëŒ€ë¡œ ìœ ì§€ë˜ì–´ì•¼ í•¨.
-  if(block_flag == 0 && @sysvar::Button::pressed_P == 0){
-    // ë²„íŠ¼ ë‹¤ì‹œ í‚¤ëŠ” ë™ì‘ ìˆ˜í–‰
-    @sysvar::Button::pressed_P = 1;
-    write("pressed_P value: %d", @sysvar::Button::pressed_P);
-    // ê°’ì´ ë³€ê²½ë˜ì–´ ë³¸ í•¨ìˆ˜ê°€ ì¬ í˜¸ì¶œ ë  ë•Œ, ê°’ í˜¼ë™ì„ ë§‰ê¸° ìœ„í•´ block ë³€ìˆ˜ set
+  // 1ÀÎ »óÅÂ¿¡¼­ ÇÑ¹ø ´õ ´­·¶À» ¶§, ±×´ë·Î À¯ÁöµÇ¾î¾ß ÇÔ.
+  if(block_flag == 0 && @sysvar::Button::button_P == 0){
+    // ¹öÆ° ´Ù½Ã Å°´Â µ¿ÀÛ ¼öÇà
+    @sysvar::Button::button_P = 1;
+    write("pressed_P value: %d", @sysvar::Button::button_P);
+    // °ªÀÌ º¯°æµÇ¾î º» ÇÔ¼ö°¡ Àç È£Ãâ µÉ ¶§, °ª È¥µ¿À» ¸·±â À§ÇØ block º¯¼ö set
     block_flag = 1;
   }
   else{
     write("In P Signal value: %d", block_flag);
-    // ì¬ í˜¸ì¶œ ë°©ì§€ë¥¼ ìœ„í•œ block ë³€ìˆ˜ ì²˜ë¦¬
+    // Àç È£Ãâ ¹æÁö¸¦ À§ÇÑ block º¯¼ö Ã³¸®
     if(block_flag == 1) block_flag = 0;
     else{
-      // ë²„íŠ¼ ìƒíƒœë¥¼ ë‚˜íƒ€ë‚´ëŠ” curStateì— í˜„ì¬ ë²„íŠ¼ ê°’ ë„£ì–´ ì¤Œ
+      // ¹öÆ° »óÅÂ¸¦ ³ªÅ¸³»´Â curState¿¡ ÇöÀç ¹öÆ° °ª ³Ö¾î ÁÜ
       @sysvar::Button::curState = 0;
-      // ë‹¤ë¥¸ ë²„íŠ¼ì´ êº¼ì ¸ì•¼ í•˜ë¯€ë¡œ, ì¬í˜¸ì¶œ ë³€ìˆ˜ SET
+      // ´Ù¸¥ ¹öÆ°ÀÌ ²¨Á®¾ß ÇÏ¹Ç·Î, ÀçÈ£Ãâ º¯¼ö SET
       block_flag = 1;
-      // ì¼œì ¸ ìˆëŠ” í•œê°œì˜ ë²„íŠ¼ OFF ìƒíƒœë¡œ ë³€ê²½
-      if(@sysvar::Button::pressed_R == 1) @sysvar::Button::pressed_R = 0;
-      if(@sysvar::Button::pressed_N == 1) @sysvar::Button::pressed_N = 0;
-      if(@sysvar::Button::pressed_D == 1) @sysvar::Button::pressed_D = 0;
+      // ÄÑÁ® ÀÖ´Â ÇÑ°³ÀÇ ¹öÆ° OFF »óÅÂ·Î º¯°æ
+      if(@sysvar::Button::button_R == 1) @sysvar::Button::button_R = 0;
+      if(@sysvar::Button::button_N == 1) @sysvar::Button::button_N = 0;
+      if(@sysvar::Button::button_D == 1) @sysvar::Button::button_D = 0;
     }
-    write("OUT P Signal value: %d", t);
+    write("OUT P Signal value: %d", block_flag);
   }
   write("finish P");
 }
 
-on sysvar Button::pressed_R
+on sysvar Button::button_R
 {
   write("in R");
-  if(block_flag == 0 && @sysvar::Button::pressed_R == 0){
-    @sysvar::Button::pressed_R = 1;
+  if(block_flag == 0 && @sysvar::Button::button_R == 0){
+    @sysvar::Button::button_R = 1;
     block_flag = 1;
   }
   else{
@@ -54,20 +54,20 @@ on sysvar Button::pressed_R
     else{
       @sysvar::Button::curState = 1;
       block_flag = 1;
-      if(@sysvar::Button::pressed_P == 1) @sysvar::Button::pressed_P = 0;
-      if(@sysvar::Button::pressed_N == 1) @sysvar::Button::pressed_N = 0;
-      if(@sysvar::Button::pressed_D == 1) @sysvar::Button::pressed_D = 0;
+      if(@sysvar::Button::button_P == 1) @sysvar::Button::button_P = 0;
+      if(@sysvar::Button::button_N == 1) @sysvar::Button::button_N = 0;
+      if(@sysvar::Button::button_D == 1) @sysvar::Button::button_D = 0;
     }
     write("OUT R Signal value: %d", block_flag);
   }
   write("finish R");
 }
 
-on sysvar Button::pressed_N
+on sysvar Button::button_N
 {
   write("in N");
-  if(block_flag == 0 && @sysvar::Button::pressed_N == 0){
-    @sysvar::Button::pressed_N = 1;
+  if(block_flag == 0 && @sysvar::Button::button_N == 0){
+    @sysvar::Button::button_N = 1;
     block_flag = 1;
   }
   else{
@@ -76,20 +76,20 @@ on sysvar Button::pressed_N
     else{
       @sysvar::Button::curState = 2;
       block_flag = 1;
-      if(@sysvar::Button::pressed_R == 1) @sysvar::Button::pressed_R = 0;
-      if(@sysvar::Button::pressed_P == 1) @sysvar::Button::pressed_P = 0;
-      if(@sysvar::Button::pressed_D == 1) @sysvar::Button::pressed_D = 0;
+      if(@sysvar::Button::button_R == 1) @sysvar::Button::button_R = 0;
+      if(@sysvar::Button::button_P == 1) @sysvar::Button::button_P = 0;
+      if(@sysvar::Button::button_D == 1) @sysvar::Button::button_D = 0;
     }
     write("OUT N Signal value: %d", block_flag);
   }
   write("finish N");
 }
 
-on sysvar_update Button::pressed_D
+on sysvar_update Button::button_D
 {
   write("in D");
-  if(block_flag == 0 && @sysvar::Button::pressed_D == 0){
-    @sysvar::Button::pressed_D = 1;
+  if(block_flag == 0 && @sysvar::Button::button_D == 0){
+    @sysvar::Button::button_D = 1;
     block_flag = 1;
   }
   else{
@@ -98,16 +98,16 @@ on sysvar_update Button::pressed_D
     else{
       @sysvar::Button::curState = 3;
       block_flag = 1;
-      if(@sysvar::Button::pressed_R == 1) @sysvar::Button::pressed_R = 0;
-      if(@sysvar::Button::pressed_N == 1) @sysvar::Button::pressed_N = 0;
-      if(@sysvar::Button::pressed_P == 1) @sysvar::Button::pressed_P = 0;
+      if(@sysvar::Button::button_R == 1) @sysvar::Button::button_R = 0;
+      if(@sysvar::Button::button_N == 1) @sysvar::Button::button_N = 0;
+      if(@sysvar::Button::button_P == 1) @sysvar::Button::button_P = 0;
     }
     write("OUT D Signal value: %d", block_flag);
   }
   write("finish D");
 }
 
-// ë²„íŠ¼ ìƒíƒœë¥¼ ì•Œë¦¬ëŠ” ì „ì—­ë³€ìˆ˜ì˜ ê°’ì„ Transmission ECUê°€ ë³´ë‚´ëŠ” ë©”ì„¸ì§€ ë‚´ìš©ê³¼ ê°™ê²Œ ì„¤ì •
+// ¹öÆ° »óÅÂ¸¦ ¾Ë¸®´Â Àü¿ªº¯¼öÀÇ °ªÀ» Transmission ECU°¡ º¸³»´Â ¸Ş¼¼Áö ³»¿ë°ú °°°Ô ¼³Á¤
 on sysvar Button::curState
 {
   $TransmissionECU::curGearStatus = @sysvar::Button::curState;
