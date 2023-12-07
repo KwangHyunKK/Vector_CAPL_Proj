@@ -6,6 +6,40 @@ includes
 
 variables
 {
-  
+  msTimer tmrCycle;
+  int CurrSleepLev;
+  int PrevSleepLev;
+  int flag;
 }
 
+on message Chassis::frmDriverStateWarnMsg
+{
+  CurrSleepLev = this.SleepinessLevel.phys; // 이 값이 뭐지?
+  if (CurrSleepLev == PrevSleepLev + 1)
+  {
+    flag = 1;
+  }
+  PrevSleepLev = CurrSleepLev;
+}
+
+on start 
+{
+    CurrSleepLev = 0;
+    PrevSleepLev = 0;
+    flag = 0;
+
+    setTimerCyclic(tmrCycle, 500);
+}
+
+on timer tmrCycle
+{
+    if(flag == 1)
+    {
+        @sysvar::Gui::Handle_Vib++;
+        if(@sysvar::Gui::Handle_Vib % 8 == 0)
+        {
+            flag = 0;
+            @sysvar::Gui::Handle_Vib = 0;
+        }
+    }
+}
