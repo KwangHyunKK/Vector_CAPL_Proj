@@ -1,0 +1,54 @@
+/*@!Encoding:949*/
+includes
+{
+  
+}
+variables
+{
+  float vSpeed = 0;
+  float vTemp = 30;
+  float brakeAng = 0;
+  float accelAng = 0;
+  int driverState = 0;
+}
+on message CAN1::frmDriverStateWarnMsg{
+  driverState = this.SleepinessLevel;
+  if(driverState == 3){
+      vSpeed *= 0.7;
+  }
+}
+on message CAN1::frmAccelMsg{
+  if(@sysvar::IGN::Ign_Start == 0){
+      accelAng = this.AccelAngle.phys;
+      if(brakeAng == 0){
+        if(accelAng > 0){
+          vSpeed += 0.0324 * (accelAng * 0.033);
+        }
+        else{
+          vSpeed -= 0.00072;
+        }
+        if(vSpeed > 255){
+          vSpeed = 255; 
+        }
+        else if(vSpeed < 0){
+          vSpeed = 0;
+        }
+        $frmEngineMsg::VehicleSpeed = vSpeed;
+        write("speed %d",vSpeed);
+      }
+  }
+  
+}
+on message CAN1::frmBrakeMsg{
+  
+    if(@sysvar::IGN::Ign_Start == 1){
+      brakeAng = this.BrakeAngle;
+      
+      vSpeed -= 0.03528 * (brakeAng * 0.033);
+      if(vSpeed < 0){
+          vSpeed = 0;
+       }
+      
+       $frmEngineMsg::VehicleSpeed = vSpeed;
+  }
+}
