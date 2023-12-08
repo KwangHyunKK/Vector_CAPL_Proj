@@ -21,8 +21,16 @@
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="handleVib" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="1" maxValuePhys="1" />
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="sleepLevel" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="3" maxValuePhys="3" />
     </namespace>
+    <namespace name="Engine" comment="" interface="">
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="ePRM" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="8190" maxValuePhys="8190" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="vSpeed" comment="" bitcount="32" isSigned="true" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="255" maxValuePhys="255" />
+    </namespace>
     <namespace name="IGN" comment="" interface="">
       <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="lgnStart" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="1" maxValuePhys="1" />
+    </namespace>
+    <namespace name="Starter" comment="" interface="">
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="drivingTimeHour" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="2000000000" maxValuePhys="2000000000" />
+      <variable anlyzLocal="2" readOnly="false" valueSequence="false" unit="" name="drivingTimeMin" comment="" bitcount="32" isSigned="false" encoding="65001" type="int" startValue="0" minValue="0" minValuePhys="0" maxValue="2000000000" maxValuePhys="2000000000" />
     </namespace>
   </namespace>
 </systemvariables>
