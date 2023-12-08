@@ -3,9 +3,26 @@ includes
 {
   
 }
-
 variables
 {
-  
+  mstimer drivingTime;
+  int minTime = 0;
+  int h = 0;
+  int m = 0;
+  int s = 0;
+}
+on start{
+  setTimerCyclic(drivingTime,100); 
+}
+on timer drivingTime{
+  h = minTime / 60;
+  m = minTime % 60;
+  minTime++;
+  @sysvar::Starter::DrivingTimeHour = h;
+  @sysvar::Starter::DrivingTimeMin = m;
+}
+on message frmEngineMsg{
+ @sysvar::Engine::vSpeed = this.VehicleSpeed;
+ @sysvar::Engine::eRPM = this.EngineRPM;
 }
 
