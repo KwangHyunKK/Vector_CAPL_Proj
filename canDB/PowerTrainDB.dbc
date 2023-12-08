@@ -54,7 +54,7 @@ BO_ 256 frmBrakeMsg: 1 BrakeECU
 
 BO_ 336 frmEngineMsg: 5 EngineECU
  SG_ EngineRPM : 24|13@1+ (1,0) [0|8191] ""  ClusterECU
- SG_ EngineTemp : 8|10@1+ (1,-20) [-20|1003] "ï¿½ï¿½C"  ClusterECU
+ SG_ EngineTemp : 8|10@1+ (1,-20) [-20|1003] "¨¬C"  ClusterECU
  SG_ VehicleSpeed : 0|8@1+ (1,0) [0|255] "km/s"  ClusterECU
 
 BO_ 337 frmTransMsg: 1 TransmissionECU
