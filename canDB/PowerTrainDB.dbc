@@ -38,7 +38,7 @@ BU_: GateWay ClusterECU EngineECU TransmissionECU AccelECU BrakeECU HandleECU Dr
 
 BO_ 512 frmDriverStateWarnMsg: 1 DriverStateWarningECU
  SG_ WindowOpenSig : 2|1@1+ (1,0) [0|1] ""  windowECU
- SG_ SleepinessLevel : 0|2@1+ (1,0) [0|3] ""  windowECU,HandleECU,EngineECU,ClusterECU
+ SG_ SleepinessLevel : 0|2@1+ (1,0) [0|3] ""  HazardLightECU,windowECU,HandleECU,EngineECU,ClusterECU
 
 BO_ 513 frmCO2SensorMsg: 2 CO2SensorECU
  SG_ CO2Level : 0|12@1+ (2,0) [0|8190] ""  DriverStateWarningECU,windowECU,ClusterECU
@@ -52,8 +52,9 @@ BO_ 257 frmAccelMsg: 1 AccelECU
 BO_ 256 frmBrakeMsg: 1 BrakeECU
  SG_ BrakeAngle : 0|5@1+ (1,0) [0|31] "Deg"  EngineECU
 
-BO_ 336 frmEngineMsg: 3 EngineECU
- SG_ EngineTemp : 8|10@1+ (1,-20) [-20|1003] "¨¬C"  ClusterECU
+BO_ 336 frmEngineMsg: 5 EngineECU
+ SG_ EngineRPM : 24|13@1+ (1,0) [0|8191] ""  ClusterECU
+ SG_ EngineTemp : 8|10@1+ (1,-20) [-20|1003] "ï¿½ï¿½C"  ClusterECU
  SG_ VehicleSpeed : 0|8@1+ (1,0) [0|255] "km/s"  ClusterECU
 
 BO_ 337 frmTransMsg: 1 TransmissionECU
