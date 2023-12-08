@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Panel1">
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl5" Children="Controls" ControlName="Group Box 5">
+      <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl3" Children="Controls" ControlName="Track Bar 3">
+        <Property Name="Name">TrackBarControl3</Property>
+        <Property Name="Size">111, 31</Property>
+        <Property Name="Location">10, 59</Property>
+        <Property Name="MaximumSize">100000, 47</Property>
+        <Property Name="Maximum">8190</Property>
+        <Property Name="TickFrequency">2</Property>
+        <Property Name="TickStyle">None</Property>
+        <Property Name="SmallChange">2</Property>
+        <Property Name="LargeChange">10</Property>
+        <Property Name="SmallChangeDouble">2</Property>
+        <Property Name="LargeChangeDouble">10</Property>
+        <Property Name="TickFrequencyDouble">2</Property>
+        <Property Name="MaximumDouble">8190</Property>
+        <Property Name="SymbolConfiguration">8;2;BodyDB;CO2SensorECU;frmCO2SensorMsg;CO2Level;1;Body;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">1</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.ProgressBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="ProgressBarControl1" Children="Controls" ControlName="Progress Bar 1">
+        <Property Name="Name">ProgressBarControl1</Property>
+        <Property Name="Size">110, 34</Property>
+        <Property Name="Location">10, 19</Property>
+        <Property Name="OriginValue">0</Property>
+        <Property Name="Maximum">8190</Property>
+        <Property Name="DecimalPlaces">0</Property>
+        <Property Name="ValueSize">38, 28</Property>
+        <Property Name="SymbolConfiguration">8;2;BodyDB;CO2SensorECU;frmCO2SensorMsg;CO2Level;1;Body;;-1;;;;;;0</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl5</Property>
+      <Property Name="Size">133, 96</Property>
+      <Property Name="Location">23, 297</Property>
+      <Property Name="Text">CO2 Value</Property>
+      <Property Name="TabIndex">18</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl4" Children="Controls" ControlName="Group Box 4">
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl6" ControlName="Switch/Indicator 6">
+        <Property Name="Name">SwitchControl6</Property>
+        <Property Name="Size">100, 100</Property>
+        <Property Name="Location">16, 20</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\eye.png</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;Body;;;driverStatus;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">5</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl4</Property>
+      <Property Name="Size">133, 136</Property>
+      <Property Name="Location">23, 150</Property>
+      <Property Name="Text">Driver State</Property>
+      <Property Name="TabIndex">17</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl3" Children="Controls" ControlName="Group Box 3">
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl5" ControlName="Switch/Indicator 5">
+        <Property Name="Name">SwitchControl5</Property>
+        <Property Name="Size">100, 100</Property>
+        <Property Name="Location">16, 20</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\power.jpg</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;IGN;;;lgnStart;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">4</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl3</Property>
+      <Property Name="Size">133, 133</Property>
+      <Property Name="Location">23, 11</Property>
+      <Property Name="Text">Power</Property>
+      <Property Name="TabIndex">16</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl2" Children="Controls" ControlName="Group Box 2">
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator 1">
+        <Property Name="Name">SwitchControl1</Property>
+        <Property Name="Size">60, 60</Property>
+        <Property Name="Location">72, 40</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\Gear_P.jpg</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;Button;;;button_P;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">0</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl2" ControlName="Switch/Indicator 2">
+        <Property Name="Name">SwitchControl2</Property>
+        <Property Name="Size">60, 60</Property>
+        <Property Name="Location">72, 120</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\Gear_R.jpg</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;Button;;;button_R;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">1</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl3" ControlName="Switch/Indicator 3">
+        <Property Name="Name">SwitchControl3</Property>
+        <Property Name="Size">60, 60</Property>
+        <Property Name="Location">72, 200</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\Gear_N.jpg</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;Button;;;button_N;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">2</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl4" ControlName="Switch/Indicator 4">
+        <Property Name="Name">SwitchControl4</Property>
+        <Property Name="Size">60, 60</Property>
+        <Property Name="Location">72, 280</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="Activation">Left</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SwitchValuesRx">1;2;0;1</Property>
+        <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\Gear_D.jpg</Property>
+        <Property Name="IsProportional">False</Property>
+        <Property Name="SymbolConfiguration">8;16;Button;;;button_D;1;;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">3</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl2</Property>
+      <Property Name="Size">200, 382</Property>
+      <Property Name="Location">460, 11</Property>
+      <Property Name="Text">Gear</Property>
+      <Property Name="TabIndex">15</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="Group Box 1">
+      <Object Type="Vector.CANalyzer.Panels.Design.PictureBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="PictureBoxControl2" ControlName="Picture Box 2">
+        <Property Name="Name">PictureBoxControl2</Property>
+        <Property Name="Size">130, 117</Property>
+        <Property Name="Location">45, 223</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\031.png</Property>
+        <Property Name="IsProportional">False</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls" ControlName="Track Bar 1">
+        <Property Name="Name">TrackBarControl1</Property>
+        <Property Name="Size">51, 130</Property>
+        <Property Name="Location">181, 52</Property>
+        <Property Name="MaximumSize">51, 100000</Property>
+        <Property Name="Maximum">31</Property>
+        <Property Name="DisplayMinMax">True</Property>
+        <Property Name="Orientation">Vertical</Property>
+        <Property Name="TickStyle">None</Property>
+        <Property Name="MaximumDouble">31</Property>
+        <Property Name="SymbolConfiguration">8;2;ChassisDB;BrakeECU;frmBrakeMsg;BrakeAngle;1;Chassis;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">11</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl2" Children="Controls" ControlName="Track Bar 2">
+        <Property Name="Name">TrackBarControl2</Property>
+        <Property Name="Size">51, 130</Property>
+        <Property Name="Location">181, 223</Property>
+        <Property Name="MaximumSize">51, 100000</Property>
+        <Property Name="Maximum">31</Property>
+        <Property Name="DisplayMinMax">True</Property>
+        <Property Name="Orientation">Vertical</Property>
+        <Property Name="TickStyle">None</Property>
+        <Property Name="MaximumDouble">31</Property>
+        <Property Name="SymbolConfiguration">8;2;ChassisDB;AccelECU;frmAccelMsg;AccelAngle;1;Chassis;;-1;;;;;;0</Property>
+        <Property Name="TabIndex">7</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.PictureBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="PictureBoxControl1" ControlName="Picture Box 1">
+        <Property Name="Name">PictureBoxControl1</Property>
+        <Property Name="Size">130, 123</Property>
+        <Property Name="Location">45, 57</Property>
+        <Property Name="TransparentColor">White</Property>
+        <Property Name="ImageFile">source\032.png</Property>
+        <Property Name="IsProportional">False</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">273, 382</Property>
+      <Property Name="Location">171, 11</Property>
+      <Property Name="Text">Accel/Brake</Property>
+      <Property Name="TabIndex">14</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">691, 425</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
