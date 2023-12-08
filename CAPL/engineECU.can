@@ -9,16 +9,16 @@ variables
   float vTemp = 30;
   float brakeAng = 0;
   float accelAng = 0;
+  float engineRPM = 0;
+  float targetSpeed = 0;
   int driverState = 0;
 }
 on message CAN1::frmDriverStateWarnMsg{
   driverState = this.SleepinessLevel;
-  if(driverState == 3){
-      vSpeed *= 0.7;
-  }
+  targetSpeed = vSpeed;
 }
 on message CAN1::frmAccelMsg{
-  if(@sysvar::IGN::lgnStart == 0){
+  if(@sysvar::IGN::lgnStart == 1){
       accelAng = this.AccelAngle.phys;
       if(brakeAng == 0){
         if(accelAng > 0){
@@ -33,16 +33,40 @@ on message CAN1::frmAccelMsg{
         else if(vSpeed < 0){
           vSpeed = 0;
         }
+        
+        if(driverState == 3 && vSpeed > targetSpeed){
+         vSpeed = targetSpeed; 
+        }
+        
         $frmEngineMsg::VehicleSpeed = vSpeed;
-        write("speed %d",vSpeed);
+        
+        if(0 <= vSpeed && vSpeed < 10){
+          engineRPM = vSpeed * (6000 / 10 - 0);
+        }
+        else if (10 <= vSpeed && vSpeed < 40){
+          engineRPM = (vSpeed-10) * (6000 / 40 - 10);
+        }
+        
+        else if(40 <= vSpeed < 80){
+          engineRPM = (vSpeed-40) * (6000 / 80 - 40);
+        }
+        else if(80 <= vSpeed && vSpeed < 170){
+          engineRPM = (vSpeed-80) * (6000 / 170 - 80);
+        }
+        else{
+          engineRPM = (vSpeed-170) * (6000 / 255 - 170);
+        }
+        $frmEngineMsg::EngineRPM = engineRPM;
       }
+      
+      
   }
   
 }
 on message CAN1::frmBrakeMsg{
   
     if(@sysvar::IGN::lgnStart == 1){
-      brakeAng = this.BrakeAngle;
+      brakeAng = this.BrakeAngle.phys;
       
       vSpeed -= 0.03528 * (brakeAng * 0.033);
       if(vSpeed < 0){
@@ -50,5 +74,25 @@ on message CAN1::frmBrakeMsg{
        }
       
        $frmEngineMsg::VehicleSpeed = vSpeed;
+      
+      if(0 <= vSpeed && vSpeed < 10){
+          engineRPM = vSpeed * (6000 / 10 - 0);
+        }
+        else if (10 <= vSpeed && vSpeed < 40){
+          engineRPM = (vSpeed-10) * (6000 / 40 - 10);
+        }
+        
+        else if(40 <= vSpeed < 80){
+          engineRPM = (vSpeed-40) * (6000 / 80 - 40);
+        }
+        else if(80 <= vSpeed && vSpeed < 170){
+          engineRPM = (vSpeed-80) * (6000 / 170 - 80);
+        }
+        else{
+          engineRPM = (vSpeed-170) * (6000 / 255 - 170);
+        }
+        $frmEngineMsg::EngineRPM = engineRPM;
   }
+    
+
 }
