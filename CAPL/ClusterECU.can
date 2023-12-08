@@ -18,8 +18,8 @@ on timer drivingTime{
   h = minTime / 60;
   m = minTime % 60;
   minTime++;
-  @sysvar::Starter::DrivingTimeHour = h;
-  @sysvar::Starter::DrivingTimeMin = m;
+  @sysvar::Starter::drivingTimeHour = h;
+  @sysvar::Starter::drivingTimeMin = m;
 }
 on message frmEngineMsg{
  @sysvar::Engine::vSpeed = this.VehicleSpeed;
