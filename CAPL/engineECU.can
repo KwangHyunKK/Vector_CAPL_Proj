@@ -12,15 +12,21 @@ variables
   float engineRPM = 0;
   float targetSpeed = 0;
   int driverState = 0;
+  int curGearState = 0;
 }
+
 on message CAN1::frmDriverStateWarnMsg{
   driverState = this.SleepinessLevel;
   targetSpeed = vSpeed;
 }
+
+on message CAN1::frmTransMsg{
+  curGearState = this.curGearStatus;
+}
 on message CAN1::frmAccelMsg{
-  if(@sysvar::IGN::lgnStart == 1){
-      accelAng = this.AccelAngle.phys;
-      if(brakeAng == 0){
+  if(@sysvar::IGN::lgnStart == 1){ //  시동을 걸어야 값이 바뀐다 
+      accelAng = this.AccelAngle.phys; // 
+      if(brakeAng == 0){ 
         if(accelAng > 0){
           vSpeed += 0.0324 * (accelAng * 0.033);
         }
@@ -34,32 +40,35 @@ on message CAN1::frmAccelMsg{
           vSpeed = 0;
         }
         
-        if(driverState == 3 && vSpeed > targetSpeed){
+        if(driverState > 0 && vSpeed > targetSpeed){ // 졸음 감지하자마다 작동
          vSpeed = targetSpeed; 
-        }
+        } 
         
         $frmEngineMsg::VehicleSpeed = vSpeed;
         
+        // RPM 부분의 수정이 필요하다
         if(0 <= vSpeed && vSpeed < 10){
-          engineRPM = vSpeed * (6000 / 10 - 0);
+          engineRPM = (vSpeed + 1) * (6000 / 10 - 0); // 600 * (vSpeed + 1) => 600 ~ 6600
         }
         else if (10 <= vSpeed && vSpeed < 40){
-          engineRPM = (vSpeed-10) * (6000 / 40 - 10);
+          engineRPM = (vSpeed - 9) * (6000 / 40 - 10); // 140 * (vSpeed - 9) => 140 ~ 5740
         }
         
         else if(40 <= vSpeed < 80){
-          engineRPM = (vSpeed-40) * (6000 / 80 - 40);
+          engineRPM = (vSpeed - 39) * (6000 / 80 - 40); // 35 * (vSpeed - 39) => 35 ~ 1435
         }
         else if(80 <= vSpeed && vSpeed < 170){
-          engineRPM = (vSpeed-80) * (6000 / 170 - 80);
+          engineRPM = (vSpeed- 79) * (6000 / 170 - 80); // 
         }
         else{
-          engineRPM = (vSpeed-170) * (6000 / 255 - 170);
+          engineRPM = (vSpeed- 169) * (6000 / 255 - 170);
         }
         $frmEngineMsg::EngineRPM = engineRPM;
       }
-      
-      
+  }
+  
+  if(curGearState == 0)
+  {
   }
   
 }
@@ -76,20 +85,20 @@ on message CAN1::frmBrakeMsg{
        $frmEngineMsg::VehicleSpeed = vSpeed;
       
       if(0 <= vSpeed && vSpeed < 10){
-          engineRPM = vSpeed * (6000 / 10 - 0);
+          engineRPM = (vSpeed + 1) * (6000 / 10 - 0);
         }
         else if (10 <= vSpeed && vSpeed < 40){
-          engineRPM = (vSpeed-10) * (6000 / 40 - 10);
+          engineRPM = (vSpeed-9) * (6000 / 40 - 10);
         }
         
         else if(40 <= vSpeed < 80){
-          engineRPM = (vSpeed-40) * (6000 / 80 - 40);
+          engineRPM = (vSpeed-39) * (6000 / 80 - 40);
         }
         else if(80 <= vSpeed && vSpeed < 170){
-          engineRPM = (vSpeed-80) * (6000 / 170 - 80);
+          engineRPM = (vSpeed-79) * (6000 / 170 - 80);
         }
         else{
-          engineRPM = (vSpeed-170) * (6000 / 255 - 170);
+          engineRPM = (vSpeed-169) * (6000 / 255 - 170);
         }
         $frmEngineMsg::EngineRPM = engineRPM;
   }
