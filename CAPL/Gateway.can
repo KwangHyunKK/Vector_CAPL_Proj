@@ -58,12 +58,16 @@ on message Body::frmDriverStateWarnMsg
 {
   message * getMsg1;
   message * getMsg2;
+  message * getMsg3;
   getMsg1 = this;
   getMsg2 = this;
-  getMsg1.can = 2;
-  getMsg2.can = 4;
+  getMsg3 = this;
+  getMsg1.can = 1;
+  getMsg2.can = 2;
+  getMsg3.can = 4;
   output(getMsg1);
   output(getMsg2);
+  output(getMsg3);
 }
 
 on message Body::frmCO2SensorMsg
@@ -81,4 +85,6 @@ on message Body::frmHazardLightMsg
   getMsg1.can = 4;
   output(getMsg1);
 }
+
+
 
