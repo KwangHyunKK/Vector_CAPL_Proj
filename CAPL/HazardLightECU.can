@@ -6,36 +6,43 @@ includes
 
 variables
 {
-  msTimer T1;
   int timerOn;
+  int cnt;
 }
 
-on timer T1
+on sysvar_update Body::lightStatus
 {
+  timerOn = @Body::lightStatus;
   if(timerOn == 1)
   {
     @sysvar::Body::leftArrow = @sysvar::Body::leftArrow ^ 1;
     @sysvar::Body::rightArrow = @sysvar::Body::rightArrow ^ 1;
-    setTimer(T1, 60);
-  }
-}
-
-on message frmDriverStateWarnMsg
-{
-  if(this.SleepinessLevel == 3)
-  {
-    timerOn = 1;
-    $LightOnStatus = 1;
-    setTimer(T1, 60);
+    $LightOnStatus = timerOn;
   }
   else
   {
-    $LightOnStatus = 0;
-    timerOn = 0;
+    @sysvar::Body::leftArrow = 0;
+    @sysvar::Body::rightArrow = 0;
   }
 }
 
-on preStart
+
+on message frmDriverStateWarnMsg
 {
-  timerOn = 0;
+  if(this.SleepinessLevel == 3 && @Body::lightStatus == 0)
+  {
+    timerOn = 1;
+    @Body::lightStatus = 1;
+    $LightOnStatus = timerOn;
+  }
+  if(timerOn == 1)
+  {
+    if(cnt == 3)
+    {
+      @sysvar::Body::leftArrow = @sysvar::Body::leftArrow ^ 1;
+      @sysvar::Body::rightArrow = @sysvar::Body::rightArrow ^ 1;
+      cnt = 0;
+    }
+    ++cnt;
+  }
 }
