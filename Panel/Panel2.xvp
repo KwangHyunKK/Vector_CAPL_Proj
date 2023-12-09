@@ -46,7 +46,7 @@
       <Property Name="TransparentColor">White</Property>
       <Property Name="ImageFile">..\..\..\Users\현대오토9\Downloads\warning (1).jpg</Property>
       <Property Name="IsProportional">False</Property>
-      <Property Name="SymbolConfiguration">8;16;Starter;;;drivingTimeHour;1;;;-1;;;;;;0</Property>
+      <Property Name="SymbolConfiguration">8;16;Cluster;;;alertWindow;1;;;-1;;;;;;0</Property>
       <Property Name="TabIndex">6</Property>
     </Object>
     <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=15.4.35.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl7" ControlName="Switch/Indicator 7">
