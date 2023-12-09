@@ -7,6 +7,7 @@ variables
 {
   mstimer drivingTime;
   int minTime = 0;
+  int CO2_value;
   int h = 0;
   int m = 0;
   int s = 0;
@@ -26,3 +27,19 @@ on message frmEngineMsg{
  @sysvar::Engine::eRPM = this.EngineRPM;
 }
 
+on message Infotainment::frmCO2SensorMsg
+{
+  CO2_value = this.CO2Level;
+  if(CO2_value < 450)
+  {
+    @sysvar::Body::co2Status = 0;
+  }
+  else if(CO2_value < 4000)
+  {
+    @sysvar::Body::co2Status = 1;
+  }
+  else
+  {
+    @sysvar::Body::co2Status = 2;
+  }
+}
