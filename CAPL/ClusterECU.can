@@ -21,7 +21,7 @@ on timer drivingTime{
   minTime++;
   @sysvar::Starter::drivingTimeHour = h;
   @sysvar::Starter::drivingTimeMin = m;
-  if(h % 2 == 0)
+  if(h % 2 == 0 && h > 2)
   {
     if(m == 0 && @sysvar::IGN::lgnStart == 1)@sysvar::Cluster::alertWindow = 1;
     else if(m==20)@sysvar::Cluster::alertWindow = 0;
