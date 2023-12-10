@@ -42,7 +42,7 @@ on message CAN1::frmAccelMsg{
           vSpeed = 0;
         }
         
-        if(driverState > 0 && vSpeed > targetSpeed){
+        if(driverState == 3 && vSpeed > targetSpeed){
          vSpeed = targetSpeed; 
         }
 
