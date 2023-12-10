@@ -13,11 +13,17 @@ variables
   float targetSpeed = 0;
   int driverState = 0;
   int curGearState = 0;
+  int limit = 0;
 }
 
 on message CAN1::frmDriverStateWarnMsg{
   driverState = this.SleepinessLevel;
-  targetSpeed = vSpeed;
+  
+  if(driverState == 3 && limit == 0){
+    targetSpeed = vSpeed;
+    limit++;
+  }
+  
 }
 
 on message CAN1::frmTransMsg{
