@@ -57,12 +57,12 @@ on message frmCO2SensorMsg
 {
   if(DriverState >= 2)
   {
-    if(this.CO2Level < 2000)
+    if(this.CO2Level < 4000)
     {
       $WindowOpenSig = 0;
       windowstatus = 0;
     }
-    else if(this.CO2Level >= 2000)
+    else if(this.CO2Level >= 4000)
     {
       $WindowOpenSig = 1;
       windowstatus = 1;
